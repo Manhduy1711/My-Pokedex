@@ -1,0 +1,47 @@
+<br>
+<div class="container main">
+    <div class="row">   
+        <% for(var i=0; i <results.length; i++) { %> 
+          
+            <div class="col-md-3">
+                <div class="p-1 mb-4">
+                  <div class="rounded-3 shadow card">
+                    <img src="<%= results[i].sprites.normal %> " class="card-img-top">
+                    <div class="card-body">
+                      <h4 class="card-title"><%= results[i].name %></h4>
+                        <% if(user) {%> 
+                            <a type="button" href="/pokemon/detail/<%= results[i].id %> " class="btn btn-primary">
+                                View detail
+                            </a>
+                        <% } %> 
+                    </div>
+                  </div>
+                </div>
+            </div>
+        <% }; %>
+        <div>
+            <% if (pages > 0) { %>
+              <ul class="pagination text-center justify-content-center">
+                  <% if (current == 1) { %>
+                      <li class="invisible"><a>First</a></li>
+                  <% } else { %>
+                      <li class="page-item"><a class="page-link" href="/pokemon/1">First</a></li>
+                  <% } %>
+                  <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                  <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                      <% if (i == current) { %>
+                          <li class="page-item active"><a class="page-link"><%= i %></a></li>
+                      <% } else { %>
+                          <li class="page-item"><a class="page-link" href="/pokemon/<%= i %>"><%= i %></a></li>
+                      <% } %>
+                  <% } %>
+                  <% if (current == pages) { %>
+                      <li class="page-item invisible"><a class="page-link">Last</a></li>
+                  <% } else { %>
+                      <li class="page-item"></li><a class="page-link"  href="/pokemon/<%= pages %>">Last</a></li>
+                  <% } %>
+              </ul>
+            <% } %>
+        </div>
+    </div>
+</div>

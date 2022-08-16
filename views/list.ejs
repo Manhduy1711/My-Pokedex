@@ -1,0 +1,59 @@
+<%- include('partials/header-logined') %>
+<div class="d-flex flex-column p-3 text-white bg-dark profile-sidebar" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-3">Sidebar</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/" class="nav-link text-white active" aria-current="page">
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/pokemon/1" class="nav-link text-white">
+          All Pokemon
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/team" class="nav-link text-white">
+          Pokemon Team
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/list" class="nav-link text-white active">
+          To Do List
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/images/user.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong><%= user.username %></strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="logout">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+<div class="main container">
+    <div class="box" id="heading">
+        <h1><%= kindOfDay %> </h1>
+    </div>
+    <div class="box">
+        <% ListItems.forEach(element => { %>
+            <form action="/list/delete" method="post">
+                <div class="item">
+                    <input type="checkbox" name="checkbox" value="<%= element %>" onchange="this.form.submit()">
+                    <p><%= element %> </p>
+                </div>
+            </form>
+        <% }); %>
+        <form class="item" action="/list" method="post">
+            <input class="listInput" type="text" name="addItem">
+            <button id="day" type="submit">+</button>
+        </form>
+    </div>
+</div> 
+<%- include('partials/footer'); %> 

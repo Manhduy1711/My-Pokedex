@@ -1,0 +1,59 @@
+<%- include('partials/header-logined'); -%> 
+<div class="d-flex flex-column p-3 text-white bg-dark profile-sidebar" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-3">Sidebar</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/" class="nav-link text-white" aria-current="page">
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/pokemon/1" class="nav-link text-white active">
+          All Pokemon
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/list" class="nav-link text-white">
+          Pokemon Team
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/list" class="nav-link text-white">
+          To Do List
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/images/user.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong><%= user.username %></strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+<div class="main container">
+    <div class="card m-5 p-5">
+        <h2><%= "#" + pokemonDetail.id %> </h2>
+        <h2><%=  pokemonDetail.name %> </h2>
+        <img class="image-detail" src="<%= pokemonDetail.sprites.animated %> " alt="pokemon image">
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <h2 class="me-3 ">Height: </h2>
+            <h2><%= pokemonDetail.height %> </h2>
+        </div>
+        <div class="d-flex justify-content-center align-items-center mt-2">
+            <h2 class="me-3" >Weight:</h2>
+            <h2><%= pokemonDetail.weight %> </h2>
+        </div>
+        <form action="/pokemon/detail/<%= pokemonDetail.id %> " method="post">
+            <button type="submit" class="btn btn-dark mt-3">Add My Team</button>
+        </form>
+    </div>
+</div>
+  
+<%- include('partials/footer'); -%> 
