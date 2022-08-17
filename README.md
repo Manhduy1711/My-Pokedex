@@ -3,12 +3,10 @@ A Web Application is built for my hobby
 ![Jigglypuff](http://img.pokemondb.net/sprites/black-white/anim/normal/jigglypuff.gif) ![Gengar](http://img.pokemondb.net/sprites/black-white/anim/normal/gengar.gif) ![Electrode](http://img.pokemondb.net/sprites/black-white/anim/normal/electrode.gif) ![Eevee](http://img.pokemondb.net/sprites/black-white/anim/normal/eevee.gif) ![Snorlax](http://img.pokemondb.net/sprites/black-white/anim/normal/snorlax.gif)
 
 # Description
-Start date: 9/8/2022 
-<space><space>
-Member: Nguyen Van Manh Duy 
-<space><space>
-Technology: nodejs, express,mongoDB, ejs
-Overview : full stack web application using Node.JS, Express.Js,MongoDB, EJS (Template Engine for server-side rendering) and deploying the application to Heroku.
+- Start date: 9/8/2022 
+- Member: Nguyen Van Manh Duy 
+- Technology: nodejs, express,mongoDB, ejs
+- Overview : full stack web application using Node.JS, Express.Js,MongoDB, EJS (Template Engine for server-side rendering) and deploying the application to Heroku.
 
 # Project stage
 HTML, CSS, Bootstrap: Building the UI of the application
